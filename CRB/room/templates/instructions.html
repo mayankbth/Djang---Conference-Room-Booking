@@ -1,0 +1,50 @@
+<center><h1>{{ context }}</h1></center>
+<hr color="green">
+
+<h2> Rules </h2>
+
+<p>
+    1. Bookings can be made only in a single day from 00:00 to night 23:45. It cannot overlap across days. So you cannot book from 
+    23:00 to 01:00, but can from 23:00 to 23:45.
+</p>
+
+<p>
+    2. A booking can be started and ended only in 15 minute intervals, i.e. XX:00, XX:15, XX:30, XX:45. This means a booking can 
+    be made at 01:15 or 16:00 but not 15:35 or 16:03.
+</p>
+
+<p>
+    3. The rooms will be allocated only to those who book them, on a first come first serve basis.
+</p>
+
+<p> 
+    4. The most optimal room which can accommodate the number of people will be allocated. For eg., if you asked for a 4 person 
+    capacity requirement then the S-Sharing (7 person capacity) will be allocated, provided it is available.
+</p>
+
+<p>
+    5. In case if the room of desired capacity is not available, the next available capacity room will be allocated. For eg., 
+    If you asked for the 4 person capacity room between 12:00 to 13:00 and the S-Sharing is not available then the T-Team will 
+    be allocated, provided it is available.
+</p>
+
+<p>
+    6. No meetings can be scheduled during the buffer time. If the booking time overlaps with the buffer time NO_VACANT_ROOM 
+    should be printed.
+</p>
+
+<p>
+    7. Bookings can be only made for 2 or more people and up to a maximum of 20 people. If the person capacity for booking 
+    is outside of 2-20 range NO_VACANT_ROOM should be printed.
+</p>
+
+<p>
+    8. Time input should follow HH:MM format (24 hours format). If an incorrect time input is provided then INCORRECT_INPUT 
+    should be printed.
+</p><br>
+
+<center>
+    <a href="{% url 'room' %}">
+        <button type="button">Home</button>
+    </a>
+</center>

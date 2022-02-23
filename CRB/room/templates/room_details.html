@@ -1,0 +1,30 @@
+<style>
+    table, th, td { border: 1px solid black; }
+</style>
+
+
+<center><h1>{{ context }}</h1></center>
+<hr color="green"><br><br>
+
+
+<center>
+
+    <table style>
+        <tr>
+            <th> Meetin Room </th>
+            <th> Capacity </th>
+        </tr>
+        {% for room in rooms %}
+            <tr>
+                <td> {{room.name}} </td>
+                <td> {{room.capacity}} </td>
+            </tr>
+        {% endfor %}
+    </table><br><br>
+
+    <a href="{% url 'room' %}">
+        <button type="button">Home</button>
+    </a><br><br>
+
+</center>
+

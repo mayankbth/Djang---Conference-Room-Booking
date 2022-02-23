@@ -1,0 +1,43 @@
+<center><h1>{{ context }}</h1></center>
+
+<hr color="green">
+
+<h2>Provide the command to book a Meeting Room.</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="command">
+    <input type="submit" value="submit">
+</form>
+
+{% if room %}
+    <h3>{{ room }}</h3>
+    <br><br>
+{% endif %}
+
+{% if NO_VACANT_ROOM %}
+    <h3>{{ NO_VACANT_ROOM }}</h3>
+    <br><br>
+{% endif %}
+
+{% if INCORRECT_INPUT %}
+    <h3>{{ INCORRECT_INPUT }}</h3>
+    <br><br>
+{% endif %}
+
+{% if available_room_list %}
+    {% for room in available_room_list %}
+        <h3>{{ room }}<h3>
+    {% endfor %}
+{% endif %}
+
+<center>
+
+    <a href="{% url 'room_details' %}">
+        <button type="button">Room Details</button>
+    </a><br><br>
+
+    <a href="{% url 'instructions' %}">
+        <button type="button">Booking Instructions</button>
+    </a><br><br>
+
+</center>
